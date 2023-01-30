@@ -12,7 +12,14 @@ def get(id):
 @app.route('/id', methods=['POST'])
 def post():
     param = request.get_json()
-    return jsonify(param)
+    name = param['name']
+    return name
+    #return jsonify(param)
 
+"""{
+    "name":"bowon",
+    "value": 23
+}
+"""
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=5000)
